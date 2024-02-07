@@ -1,0 +1,49 @@
+def validar(x):
+    cond=True
+    if x<5 or x>50:
+        print ("\nLos datos deben de ser entre 5 y 50 caracteres, ingrese los datos correctos")
+        cond=False
+    else:
+        cond=True
+    return (cond)
+
+def validarnum(x):
+    cond=True
+    if x!=10:
+        print ("\nLos datos deben de ser 10 caracteres, ingrese los datos correctos")
+        cond=False
+    else:
+        cond=True
+    return (cond)
+    
+nregistros= int( input("Cuantos usuarios deseas registrar: "))
+num = 1
+cond=True
+while num <=  nregistros:
+    print (" Datos Registro ", num)
+    nombre = input("Nombre: ")
+    cond=validar(len(nombre))
+    while cond==False:
+        nombre = input("Nombre: ")
+        cond=validar(len(nombre))
+        
+    apellidos = input("Apellidos: ")
+    cond=validar(len(apellidos))
+    while cond==False:
+        apellidos = input("Apellidos: ")
+        cond=validar(len(apellidos))
+        
+    num_tel = input("Numero de Telefono: ")
+    cond=validarnum(len(num_tel))
+    while cond==False:
+        num_tel = input("Numero de Telefono: ")
+        cond=validar(len(num_tel))
+        
+    email = input("Correo Electronico: ")
+    cond=validar(len(email))
+    while cond==False:
+        email = input("Correo Electronico: ")
+        cond=validar(len(email))
+        
+    num = num + 1
+    print ("Hola" + " " + nombre + " " +  apellidos + " " + "En breve recibiras un correo a" + " " + email)
